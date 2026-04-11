@@ -1,19 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/player_sheet.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Projectile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.5, 8 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 clamp_to_x = true
+bullet_scene = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 process_priority = 1
 position = Vector2( 3, 0 )
-scale = Vector2( 5, 5 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 120, 18, 15, 16 )
