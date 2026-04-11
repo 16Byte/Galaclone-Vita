@@ -22,6 +22,11 @@
 ## engine's asset cache. Gets rebuilt by the editor automatically.
 .import/
 
+# Builds
+*.vpk
+*.exe
+*.x86_64
+
 # Mono (Only ignore if we're using the .NET version of Godot with C#)
 # .mono/
 # bin/
