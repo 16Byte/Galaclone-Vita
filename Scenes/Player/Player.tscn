@@ -8,6 +8,7 @@ extents = Vector2( 7.5, 8 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
+clamp_to_x = true
 
 [node name="Sprite" type="Sprite" parent="."]
 process_priority = 1
