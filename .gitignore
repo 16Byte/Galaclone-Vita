@@ -1,0 +1,45 @@
+# Godot 4 Git Ignore Template (Team-Oriented)
+# Diego Jimenez (2026)
+#
+# This is a collection of specific files and directories that we tell git to ignore.           
+# Above each of these entries is a detailed explanation of why it's ignored from the source code. 
+# If you find any additions that need to be made, feel free to suggest them anytime.  
+#
+# The idea of source control is maintaining the source of truth in relation to the project.
+# Only files that define how the game is built, runs, and behaves should be tracked.
+# Any files generated in the source code directory such as caches, logs, or local 
+# configurations, are excluded. 
+
+# Godot 4+ specific ignores
+## .godot/ is for cache and editor state. Gets rebuilt by the editor automatically.
+## NOTE: .godot/uid_cache.bin is also excluded here. This means autoload entries in
+## project.godot must use res:// paths, NOT uid:// paths. The editor UI generates uid://
+## references by default — always set autoloads by editing project.godot directly.
+## You can check if this is your issue by opening project.godot in a text editor like notepad++ or kwrite.
+.godot/
+## /android/ is for android specific build scaffolding. Gets rebuilt by the editor automatically.
+/android/
+## engine's asset cache. Gets rebuilt by the editor automatically.
+.import/
+
+# Mono (Only ignore if we're using the .NET version of Godot with C#)
+# .mono/
+# bin/
+# obj/
+# commented out becuase we're focusing on GDScript
+
+# OS junk - Mostly just file explorer specific files that we regard as junk created by the OS
+## Mac OS likes to shit these out around the directory
+.DS_Store
+## Windows likes to shit these out around the directory
+Thumbs.db
+
+# Editor stuff - unused since we're not using any external editors currently.
+# If that changes, uncomment the respective line below.
+## Visual Studio Code
+#.vscode/
+## JetBrains IDE
+#.idea/
+
+# Logs - runtime/debug output. Generated during execution, not part of the source of truth.
+*.log
