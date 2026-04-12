@@ -10,6 +10,9 @@ func _ready() -> void:
 	call_deferred("_spawn_enemies_randomly", rand_range(4.0, 16.0))
 	
 func _process(_delta) -> void:
+	if Input.is_action_just_released("quick_menu"):
+		_spawn_enemies_randomly(rand_range(4.0, 16))
+		
 	if OS.get_name() == "Windows" or OS.get_name() == "X11":
 		if Input.is_action_just_released("pause"):
 			get_tree().quit()
