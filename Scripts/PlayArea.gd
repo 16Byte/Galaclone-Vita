@@ -2,18 +2,24 @@ extends Node
 
 var bounds : Rect2
 var _camera : Camera2D
+var isReady : bool = false
 
 func initialize(camera: Camera2D, viewport_rect: Rect2) -> void:
 	_camera = camera
 	var half_w = viewport_rect.size.x / (2.0 * camera.zoom.x)
 	var half_h = viewport_rect.size.y / (2.0 * camera.zoom.y)
 	bounds = Rect2(-half_w, -half_h, half_w * 2.0, half_h * 2.0)
+	isReady = true
 
 func get_spawn_x() -> float:
+	randomize()
 	return rand_range(bounds.position.x + 16.0, bounds.end.x - 16.0)
 
 func get_spawn_y() -> float:
-	return bounds.position.y - 32.0
+	randomize()
+	return rand_range(bounds.position.y - 150, bounds.get_center().y - 200)
+	#return bounds.position.y - 150
+	#return bounds.get_center().y - 200
 
 func is_out_of_bounds(pos: Vector2) -> bool:
 	# grow(left, top, right, bottom) — top needs way more runway for bullets
