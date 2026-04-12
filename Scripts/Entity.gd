@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 export var clamp_to_x : bool = false
 
+enum Faction { PLAYER, ENEMY }
+export(Faction) var faction = Faction.PLAYER
+
 func _physics_process(_delta) -> void:
 	if clamp_to_x:
 		_apply_x_clamp()
@@ -16,5 +19,6 @@ func _apply_x_clamp() -> void:
 func on_exit_bounds() -> void:
 	pass
 
+# warning-ignore:unused_argument
 func take_damage(amount: int) -> void:
 	pass

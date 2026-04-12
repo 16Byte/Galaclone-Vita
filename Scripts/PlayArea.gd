@@ -23,6 +23,7 @@ func get_bounds() -> Rect2:
 	return bounds
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	get_tree().get_root().connect("size_changed", self, "_on_resize")
 
 func _on_resize() -> void:

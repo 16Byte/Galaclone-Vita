@@ -8,6 +8,7 @@ func _physics_process(delta) -> void:
 	._physics_process(delta)
 	velocity.x = Input.get_axis("move_left", "move_right") * SPEED
 	velocity.y = 0.0
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 
 	if Input.is_action_just_pressed("shoot"):
