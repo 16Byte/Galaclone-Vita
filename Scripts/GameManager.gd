@@ -16,9 +16,9 @@ func _process(_delta) -> void:
 	if Input.is_action_just_released("quick_menu"):
 		_spawn_enemies_randomly(rand_range(4.0, 16))
 		
-	if OS.get_name() == "Windows" or OS.get_name() == "X11":
+	if get_tree().current_scene.name == "TestScene":
 		if Input.is_action_just_released("pause"):
-			get_tree().quit()
+			get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 func _spawn_enemies_randomly(amount) -> void:
 	for _i in range(amount):

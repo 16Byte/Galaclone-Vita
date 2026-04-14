@@ -17,7 +17,6 @@ script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 SPEED = 400.0
-ai_mode = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 224.0
