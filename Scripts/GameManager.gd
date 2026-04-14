@@ -6,8 +6,11 @@ export var enemy_scene : PackedScene
 func _ready() -> void:
 	print("Operating System is: " + OS.get_name())
 	enemy_scene = load("res://Scenes/Enemies/BossEnemy.tscn")
-	#if PlayArea.isReady:
-	call_deferred("_spawn_enemies_randomly", rand_range(4.0, 16.0))
+	
+	print(get_tree().current_scene.name)
+	
+	if get_tree().current_scene.name == "TestScene":
+		call_deferred("_spawn_enemies_randomly", rand_range(4.0, 16.0))
 	
 func _process(_delta) -> void:
 	if Input.is_action_just_released("quick_menu"):
