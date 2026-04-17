@@ -10,6 +10,11 @@ func initialize(camera: Camera2D, viewport_rect: Rect2) -> void:
 	var half_h = viewport_rect.size.y / (2.0 * camera.zoom.y)
 	bounds = Rect2(-half_w, -half_h, half_w * 2.0, half_h * 2.0)
 	isReady = true
+	
+	var star_field = preload("res://Scripts/Starfield.gd").new()
+	star_field.bounds = bounds  # default already matches
+	star_field.position = bounds.get_center() + Vector2(0, -225)
+	add_child(star_field)
 
 func get_spawn_x() -> float:
 	randomize()
