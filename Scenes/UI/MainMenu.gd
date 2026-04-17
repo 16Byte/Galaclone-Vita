@@ -15,7 +15,7 @@ const ITEM_SPACING   := 40.0
 const BLINK_INTERVAL := 0.6
 
 const FONT_DATA := preload("res://Assets/Fonts/Emulogic-zrEw.ttf")
-const LOGO_TEX  := preload("res://Assets/Sprites/Galaclone Logo pxArt.png")
+#const LOGO_TEX  := preload("res://Assets/Sprites/Galaclone Logo pxArt.png")
 
 enum Page { TITLE, MODE, CLASSIC }
 
@@ -116,7 +116,7 @@ func _confirm() -> void:
 # -- Draw -----------------------------------------------
 func _on_draw() -> void:
 	var logo_pos := Vector2((VIEWPORT.x - LOGO_SIZE.x) * 0.5, LOGO_Y)
-	_canvas.draw_texture_rect(LOGO_TEX, Rect2(logo_pos, LOGO_SIZE), false)
+	#_canvas.draw_texture_rect(LOGO_TEX, Rect2(logo_pos, LOGO_SIZE), false)
 
 	if _page == Page.TITLE:
 		if _blink_on:

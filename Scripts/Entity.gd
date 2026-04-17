@@ -5,6 +5,9 @@ export var clamp_to_x : bool = false
 enum Faction { PLAYER, ENEMY }
 export(Faction) var faction = Faction.PLAYER
 
+func _ready() -> void:
+	add_to_group("entities")
+
 func _physics_process(_delta) -> void:
 	if clamp_to_x:
 		_apply_x_clamp()
