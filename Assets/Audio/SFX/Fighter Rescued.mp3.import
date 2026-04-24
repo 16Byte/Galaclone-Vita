@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Fighter Rescued.mp3-28fad39df447469a11fc8382e14c70fa.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Fighter Rescued.mp3"
+dest_files=[ "res://.import/Fighter Rescued.mp3-28fad39df447469a11fc8382e14c70fa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

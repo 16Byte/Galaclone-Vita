@@ -19,12 +19,14 @@ func _physics_process(delta) -> void:
 
 func on_exit_bounds() -> void:
 	print("culling projectile")
+	GameManager.bullets_in_scene -= 1
 	queue_free()
 
 func _on_Area2D_body_entered(body):
 	if body.get("faction") == shooter_faction:
 		return  # same team, ignore
 	if body.has_method("take_damage"):
+		GameManager.bullets_in_scene -= 1
 		body.take_damage(1)
 		queue_free()
 		

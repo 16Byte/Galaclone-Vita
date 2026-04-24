@@ -3,6 +3,7 @@ extends "res://Scripts/Entity.gd"
 export var SPEED : float = 700.0
 export var bullet_scene : PackedScene
 export var ai_mode : bool = false
+onready var audio_player = $AudioStreamPlayer
 
 var velocity = Vector2.ZERO
 
@@ -21,6 +22,7 @@ func _physics_process(delta) -> void:
 		if Input.is_action_just_pressed("shoot"):
 			_shoot()
 	
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 
 func _run_ai_mode(delta) -> void:
@@ -40,7 +42,14 @@ func _run_ai_mode(delta) -> void:
 		_ai_shoot_timer = rand_range(0.3, 0.9)
 
 func _shoot() -> void:
+	print(GameManager.bullets_in_scene)
+	
+	if GameManager.bullets_in_scene >= 2:
+		return
+	
+	GameManager.bullets_in_scene += 1
 	var bullet = bullet_scene.instance()
 	bullet.direction = -1
 	bullet.global_position = global_position + Vector2(2.5, 0)
+	audio_player.play()
 	get_tree().get_root().add_child(bullet)

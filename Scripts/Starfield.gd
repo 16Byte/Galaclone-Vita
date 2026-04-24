@@ -45,6 +45,8 @@ var _rng := RandomNumberGenerator.new()
 
 
 func _ready() -> void:
+	z_index = -254
+	z_as_relative = false
 	_rng.randomize()
 	respawn_all()
 

@@ -7,6 +7,8 @@ extends CanvasLayer
 #   - Redraws only fire on state change (cursor move, blink, page change)
 #   - _process disabled outside the title screen
 
+onready var ui_sfx_player = $"../UI_SFX"
+
 const VIEWPORT       := Vector2(960, 544)
 const LOGO_SIZE      := Vector2(420, 280)
 const LOGO_Y         := 40.0
@@ -48,8 +50,11 @@ func _ready() -> void:
 
 	# Single Node2D owns all drawing. No Controls, no containers.
 	_canvas = Node2D.new()
+# warning-ignore:return_value_discarded
 	_canvas.connect("draw", self, "_on_draw")
 	add_child(_canvas)
+	
+	GameManager.call_deferred("_spawn_enemies_randomly", 15)
 
 
 func _process(delta: float) -> void:
@@ -85,6 +90,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _goto(page: int) -> void:
 	_page = page
 	_cursor = 0
+	ui_sfx_player.play()
 	set_process(page == Page.TITLE)  # only tick blink on title
 	if page == Page.TITLE:
 		_blink_on = true
@@ -115,6 +121,7 @@ func _confirm() -> void:
 
 # -- Draw -----------------------------------------------
 func _on_draw() -> void:
+# warning-ignore:unused_variable
 	var logo_pos := Vector2((VIEWPORT.x - LOGO_SIZE.x) * 0.5, LOGO_Y)
 	#_canvas.draw_texture_rect(LOGO_TEX, Rect2(logo_pos, LOGO_SIZE), false)
 
@@ -143,11 +150,13 @@ func _is_confirm(event: InputEvent) -> bool:
 
 # -- Game Start -----------------------------------------
 func start_classic_1p() -> void:
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/TestScene.tscn")
 	GameManager._spawn_enemies_randomly(15)
 
 
 func start_classic_2p() -> void:
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/TestScene.tscn")
 	GameManager._spawn_enemies_randomly(15)
 

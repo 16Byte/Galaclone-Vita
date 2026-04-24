@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Challenging Stage Perfect.mp3-c79ae6276162c50084ad8497b885ba96.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Challenging Stage Perfect.mp3"
+dest_files=[ "res://.import/Challenging Stage Perfect.mp3-c79ae6276162c50084ad8497b885ba96.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

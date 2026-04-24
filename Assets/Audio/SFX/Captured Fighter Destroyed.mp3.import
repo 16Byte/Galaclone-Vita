@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Captured Fighter Destroyed.mp3-19a7e1e1f9d2f7bc71a931f6e714e964.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Captured Fighter Destroyed.mp3"
+dest_files=[ "res://.import/Captured Fighter Destroyed.mp3-19a7e1e1f9d2f7bc71a931f6e714e964.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

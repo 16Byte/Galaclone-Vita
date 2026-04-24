@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Challenging Stage.mp3-68459bfad9600ac7ecc0436e5591caaa.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Challenging Stage.mp3"
+dest_files=[ "res://.import/Challenging Stage.mp3-68459bfad9600ac7ecc0436e5591caaa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

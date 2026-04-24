@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/fps_counter.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Fonts/Emulogic-zrEw.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Audio/Music/Stage Intro.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/SFX/Fire.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
@@ -56,3 +58,29 @@ valign = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 3 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = true
+bus = "Music"
+
+[node name="UI_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+bus = "UI"
+
+[node name="Title" type="Label" parent="."]
+process_priority = 1
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -230.0
+margin_top = -357.0
+margin_right = -86.0
+margin_bottom = -337.0
+rect_scale = Vector2( 3.20276, 2.15068 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Galaclone"
+align = 1
+uppercase = true

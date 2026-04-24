@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Die-Start Up Sound.mp3-e5c8bc00e58489859f8054a76c67bc22.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Die-Start Up Sound.mp3"
+dest_files=[ "res://.import/Die-Start Up Sound.mp3-e5c8bc00e58489859f8054a76c67bc22.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

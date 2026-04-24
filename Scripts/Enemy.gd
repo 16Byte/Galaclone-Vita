@@ -1,6 +1,10 @@
 extends "res://Scripts/Entity.gd"
 
+onready var audio_player = $AudioStreamPlayer
+
 var health : int
+
+var _dying : bool = false
 
 enum EnemyType { 
 	Bee, Butterfly, Boss,
@@ -19,5 +23,11 @@ func _ready() -> void:
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
-		print("culling enemy")
+		_dying = true
+		hide()
+		set_physics_process(false)
+		$CollisionShape2D.set_deferred("disabled", true)
+		remove_from_group("entities")
+		audio_player.play()
+		yield (audio_player, "finished")
 		queue_free()
