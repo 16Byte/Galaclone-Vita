@@ -42,7 +42,8 @@ func _run_ai_mode(delta) -> void:
 		_ai_shoot_timer = rand_range(0.3, 0.9)
 
 func _shoot() -> void:
-	print(GameManager.bullets_in_scene)
+	if Global.run_mode == Global.RuntimeMode.Dev:
+		print(GameManager.bullets_in_scene)
 	
 	if GameManager.bullets_in_scene >= 2:
 		return

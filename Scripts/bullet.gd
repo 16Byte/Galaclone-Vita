@@ -18,7 +18,9 @@ func _physics_process(delta) -> void:
 	move_and_slide(Vector2(0, current_speed * direction))
 
 func on_exit_bounds() -> void:
-	print("culling projectile")
+	if Global.run_mode == Global.RuntimeMode.Dev:
+		print("culling projectile")
+	
 	GameManager.bullets_in_scene -= 1
 	queue_free()
 

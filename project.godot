@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 
 PlayArea="*res://Scripts/PlayArea.gd"
 GameManager="*res://Scripts/GameManager.gd"
+Global="*res://Scripts/Global.gd"
 
 [display]
 
